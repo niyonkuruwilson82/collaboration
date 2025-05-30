@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic JavaScript Operations</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<style>
+    
+    footer {
+      margin-top: 30px;
+      padding: 10px;
+      text-align: center;
+      background-color: #f2f2f2;
+      color: #333;
+      font-size: 14px;
+    }
+
+</style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1DA1F2',
+                        secondary: '#14171A',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 py-10">
+    <div class="max-w-md mx-auto bg-white shadow-lg rounded-2xl p-6">
+        <h2 class="text-2xl font-bold text-center mb-6">Basic JavaScript Operations</h2>
+        <label class="block mb-2">Enter first number:</label>
+        <input type="number" id="num1" class="w-full mb-4 p-2 border rounded">
+
+        <label class="block mb-2">Enter second number:</label>
+        <input type="number" id="num2" class="w-full mb-4 p-2 border rounded">
+
+        <button onclick="performOperations()" class="w-full bg-blue-600 text-white py-2 rounded">Calculate</button>
+
+        <div id="results" class="mt-6 text-gray-700"></div>
+    </div>
+
+    <script>
+        function performOperations() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const str1 = 'hello';
+            const str2 = 'world';
+            const bool1 = true;
+            const bool2 = false;
+
+            const addition = num1 + num2;
+            const subtraction = num1 - num2;
+            const multiplication = num1 * num2;
+            const division = num1 / num2;
+            const remainder = num1 % num2;
+            const concatenation = str1 + ', ' + str2;
+            const comparison = num1 > num2;
+            const logicalAnd = bool1 && bool2;
+            const logicalOr = bool1 || bool2;
+
+            const results = `
+                <p>Addition: ${addition}</p>
+                <p>Subtraction: ${subtraction}</p>
+                <p>Multiplication: ${multiplication}</p>
+                <p>Division: ${division.toFixed(2)}</p>
+                <p>Remainder: ${remainder}</p>
+                <p>Concatenation: ${concatenation}</p>
+                <p>Comparison (num1 > num2): ${comparison}</p>
+                <p>Logical AND (true && false): ${logicalAnd}</p>
+                <p>Logical OR (true || false): ${logicalOr}</p>
+            `;
+            document.getElementById('results').innerHTML = results;
+        }
+    </script>
+      <footer>
+    &copy; 2025 JavaScript Operations Demo | Developed by NIWILSON
+  </footer>
+</body>
+</html>
